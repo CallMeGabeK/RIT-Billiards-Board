@@ -24,3 +24,5 @@ The easiest way to use the endpoints will be with the Endpoints menu in IntelliJ
 After running the code you chose what command you want to run and what payload to give it.
 
 Model/Entity and Repository --> Service --> Controller
+
+http://localhost:8082/h2-console
