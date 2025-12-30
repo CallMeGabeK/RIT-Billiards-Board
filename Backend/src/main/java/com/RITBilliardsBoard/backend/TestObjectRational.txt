@@ -1,0 +1,24 @@
+You will notice that there are 4 different packages each with a specific purpose.
+
+Repository Layer:
+    An abstraction layer responsible for data access operations (Create, Read, Update, Delete) with the database.
+
+Controller Layer:
+    Handles HTTP requests and responses, performs basic validation, and passes data to the service layer.
+    It is the entry point for external entities, in our case the REACT application
+
+Service Layer:
+    Contains the business logic, performs processing and complex validation, and coordinates interactions
+    between different repositories.
+
+Entity/Model Layer:
+    Represents the data structure or domain model, defining how data is stored in the database.
+
+
+To run the spring boot application either:
+    run the command "mvn clean spring-boot:run"
+    or
+    if on intelliJ, navigate to the BackendApplication file and run the program
+
+The easiest way to use the endpoints will be with the Endpoints menu in IntelliJ.
+After running the code you chose what command you want to run and what payload to give it.

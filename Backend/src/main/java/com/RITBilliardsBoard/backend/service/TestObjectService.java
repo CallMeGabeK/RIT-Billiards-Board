@@ -5,8 +5,12 @@ import java.util.List;
 
 /**
  * Interface that lays out functionality for CRUD operations relating to the {@link TestObject} class.
- * 
+ * <p>
  * Implemented in {@link TestObjectServiceImpl}
+ * <p>
+ * TODO: Only an example, delete before Prod
+ *
+ * @author Gabriel Kennedy
  */
 public interface TestObjectService {
 
@@ -24,7 +28,7 @@ public interface TestObjectService {
     List<TestObject> getTestObjects();
 
     /**
-     * POST: update {@link TestObject} with id {@link TestObject#testObjectId}
+     * POST: update {@link TestObject} with id
      * Sets {@link TestObject} with ID in the db as new {@link TestObject}
      * @param testObject updated {@link TestObject}
      * @param testObjectId id of {@link TestObject} that you want to update

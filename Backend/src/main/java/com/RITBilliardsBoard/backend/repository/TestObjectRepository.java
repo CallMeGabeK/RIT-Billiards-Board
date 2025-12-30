@@ -7,14 +7,15 @@ import com.RITBilliardsBoard.backend.entity.TestObject;
 
 /**
  * This interface provides the functionality for a DAO (Data Access Object) for the {@link TestObject} class
- * 
+ * <p>
  * It extends the {@link CrudRepository} which provides standard methods for performing CRUD (Create, Read, Update, Delete) operations on entities in a database
- * and passes the TestObject in to indicate that we want to do such with TestObjects.
- * 
+ * and passes the TestObject in to indicate that we want to do such with TestObjects IN THE DATABASE
+ * <p>
  * It also passes a Long which would be the ID of the {@link TestObject} we want to interact with. 
- * 
- * @author Gabriel Kennedy
+ * <p>
  * TODO: Only an example, delete before Prod
+ *
+ * @author Gabriel Kennedy
  */
 @Repository // Used to indicate that a class is a Data Access Object (DAO) or part of the persistence layer.
 public interface TestObjectRepository

@@ -9,26 +9,45 @@ import org.springframework.stereotype.Service;
 import com.RITBilliardsBoard.backend.entity.TestObject;
 import com.RITBilliardsBoard.backend.repository.TestObjectRepository;
 
-@Service
+/**
+ * Concrete implementation of {@link TestObjectService}
+ * <p>
+ * Utilizes {@link TestObjectRepository} to interact with the DB
+ * <p>
+ * This class contains all the business logic and does not interact with the DB
+ * <p>
+ * TODO: Only an example, delete before Prod
+ *
+ * @author Gabriel Kennedy
+ */
+@Service //marks a class as a service provider within the application's business logic layer
 public class TestObjectServiceImpl implements TestObjectService {
 
-    @Autowired
+    @Autowired //used for automatic dependency injection https://www.baeldung.com/spring-autowire
     private TestObjectRepository testObjectRepository;
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public TestObject addTestObject(TestObject testObject) {
         return testObjectRepository.save(testObject);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public List<TestObject> getTestObjects() {
         return (List<TestObject>) testObjectRepository.findAll();
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public TestObject updateTestObject(TestObject testObject, Long testObjectId) {
-        TestObject testObjectDB = testObjectRepository.findById(testObjectId)
-                .get();
+        TestObject testObjectDB = testObjectRepository.findById(testObjectId).get();
 
         if (Objects.nonNull(testObject.getName())
                 && !"".equalsIgnoreCase(
@@ -40,6 +59,9 @@ public class TestObjectServiceImpl implements TestObjectService {
         return testObjectRepository.save(testObjectDB);
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public void deleteTestObjectById(Long testObjectId) {
         testObjectRepository.deleteById(testObjectId);

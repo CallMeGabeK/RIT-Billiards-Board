@@ -1,9 +1,7 @@
 package com.RITBilliardsBoard.backend.controller;
 
-// java Program to Illustrate DepartmentController File
-
 import java.util.List;
-// Importing required classes
+
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -11,19 +9,19 @@ import org.springframework.web.bind.annotation.*;
 import com.RITBilliardsBoard.backend.entity.TestObject;
 import com.RITBilliardsBoard.backend.service.TestObjectService;
 
-// Annotation
+/**
+ * Class that contains the API endpoints that will be used by the front end.
+ * Utilizes {@link TestObjectService} which contains all the business logic.
+ */
 @RestController
-
-// Class
 public class TestObjectController {
 
-    @Autowired
+    @Autowired //used for automatic dependency injection https://www.baeldung.com/spring-autowire
     private TestObjectService testObjectService;
 
     // Add operation
     @PostMapping("/testObjects")
-    public TestObject addTestObject(
-            @Valid @RequestBody TestObject testObject) {
+    public TestObject addTestObject(@Valid @RequestBody TestObject testObject) {
         return testObjectService.addTestObject(testObject);
     }
 
@@ -35,17 +33,14 @@ public class TestObjectController {
 
     // Update operation
     @PutMapping("/testObjects/{id}")
-    public TestObject updatTestObject(@RequestBody TestObject department,
-            @PathVariable("id") Long testObjectId) {
-        return testObjectService.updateTestObject(
-                department, testObjectId);
+    public TestObject updatTestObject(@RequestBody TestObject department, @PathVariable("id") Long testObjectId) {
+        return testObjectService.updateTestObject(department, testObjectId);
     }
 
     // Delete operation
     @DeleteMapping("/testObjects/{id}")
     public String deleteTestObjectById(@PathVariable("id") Long testObjectId) {
-        testObjectService.deleteTestObjectById(
-                testObjectId);
+        testObjectService.deleteTestObjectById(testObjectId);
         return "Deleted Successfully";
     }
 }
