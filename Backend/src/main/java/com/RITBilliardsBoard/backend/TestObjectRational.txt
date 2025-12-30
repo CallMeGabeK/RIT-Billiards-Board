@@ -22,3 +22,5 @@ To run the spring boot application either:
 
 The easiest way to use the endpoints will be with the Endpoints menu in IntelliJ.
 After running the code you chose what command you want to run and what payload to give it.
+
+Model/Entity and Repository --> Service --> Controller
