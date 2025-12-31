@@ -4,8 +4,6 @@ import com.RITBilliardsBoard.backend.auth.entity.Role;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Set;
-
 @Entity
 @Data
 @Builder

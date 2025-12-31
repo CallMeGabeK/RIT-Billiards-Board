@@ -19,7 +19,7 @@ public class UserInfoDetails implements UserDetails {
     public UserInfoDetails(User user) {
         this.username = user.getEmail(); // Use email as username
         this.password = user.getPassword();
-        this.authorities = List.of(user.getRole()); //TODO WEWEWEW
+        this.authorities = List.of(user.getRole());
     }
 
     @Override

@@ -30,7 +30,7 @@ public class AuthService {
                 .build();
         repository.save(user);
 
-        var jwtToken = jwtService.generateToken(request.getEmail()); //TODO WEWEWEWE
+        var jwtToken = jwtService.generateToken(request.getEmail());
         return AuthResponse.builder()
                 .token(jwtToken)
                 .build();
@@ -44,7 +44,7 @@ public class AuthService {
 
         var user = repository.findByEmail(request.getEmail()).orElseThrow();
 
-        var jwtToken = jwtService.generateToken(request.getEmail()); //TODO WEWEWEWE
+        var jwtToken = jwtService.generateToken(request.getEmail());
         return AuthResponse.builder()
                 .token(jwtToken)
                 .build();

@@ -19,7 +19,6 @@ import java.util.Optional;
 public class UserService implements UserDetailsService {
 
     private final UserRepository repository;
-    private final PasswordEncoder encoder;
 
     // Method to load user details by username (email)
     @Override
@@ -34,26 +33,5 @@ public class UserService implements UserDetailsService {
         // Convert UserInfo to UserDetails (UserInfoDetails)
         User user = userInfo.get();
         return new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), List.of(user.getRole())); //TODO WEWEWEW
-    }
-
-    // Add any additional methods for registering or managing users
-    public String addUser(User user) {
-        if (repository.findByEmail(user.getEmail()).isPresent()) {
-            return "Email already in use!";
-        }
-        // Encrypt password before saving
-        user.setPassword(encoder.encode(user.getPassword()));
-        repository.save(user);
-        return "User added successfully!";
-    }
-
-
-    /**
-     * Fetch a user by email.
-     * @param email the email of the user
-     * @return Optional of UserInfo
-     */
-    public Optional<User> getUserByEmail(String email) {
-        return repository.findByEmail(email);
     }
 }

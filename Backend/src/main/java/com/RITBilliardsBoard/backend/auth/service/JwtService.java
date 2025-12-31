@@ -21,7 +21,7 @@ import java.util.function.Function;
 @Service
 public class JwtService {
 
-    public static final String SECRET = "5367566859703373367639792F423F452848284D6251655468576D5A71347437";
+    public static final String SECRET = "5367566859703373367639792F423F452848284D6251655468576D5A71347437"; //TODO MOVE TO .ENV
 
     public String generateToken(String email) { // Use email as username
         Map<String, Object> claims = new HashMap<>();
