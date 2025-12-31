@@ -1,4 +1,4 @@
-package com.RITBilliardsBoard.backend.config;
+package com.RITBilliardsBoard.backend.auth.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

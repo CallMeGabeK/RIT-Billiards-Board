@@ -1,16 +1,14 @@
-package com.RITBilliardsBoard.backend.service;
+package com.RITBilliardsBoard.backend.auth.service;
 
-import com.RITBilliardsBoard.backend.entity.UserInfo;
+import com.RITBilliardsBoard.backend.entity.User;
 
 import org.jspecify.annotations.Nullable;
 import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collectors;
 
 public class UserInfoDetails implements UserDetails {
 
@@ -18,10 +16,10 @@ public class UserInfoDetails implements UserDetails {
     private String password;
     private List<GrantedAuthority> authorities;
 
-    public UserInfoDetails(UserInfo userInfo) {
-        this.username = userInfo.getEmail(); // Use email as username
-        this.password = userInfo.getPassword();
-        this.authorities = new ArrayList<>(userInfo.getRoles());
+    public UserInfoDetails(User user) {
+        this.username = user.getEmail(); // Use email as username
+        this.password = user.getPassword();
+        this.authorities = List.of(user.getRole()); //TODO WEWEWEW
     }
 
     @Override

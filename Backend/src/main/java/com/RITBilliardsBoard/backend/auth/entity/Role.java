@@ -1,4 +1,4 @@
-package com.RITBilliardsBoard.backend.entity;
+package com.RITBilliardsBoard.backend.auth.entity;
 
 import org.springframework.security.core.GrantedAuthority;
 
