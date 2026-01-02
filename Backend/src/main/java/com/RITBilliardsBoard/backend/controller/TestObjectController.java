@@ -33,7 +33,7 @@ public class TestObjectController {
 
     // Update operation
     @PutMapping("/testObjects/{id}")
-    public TestObject updatTestObject(@RequestBody TestObject department, @PathVariable("id") Long testObjectId) {
+    public TestObject updateTestObject(@RequestBody TestObject department, @PathVariable("id") Long testObjectId) {
         return testObjectService.updateTestObject(department, testObjectId);
     }
 

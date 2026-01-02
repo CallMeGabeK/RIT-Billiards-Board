@@ -26,10 +26,7 @@ public class TestObjectServiceImpl implements TestObjectService {
     @Autowired //used for automatic dependency injection https://www.baeldung.com/spring-autowire
     private TestObjectRepository testObjectRepository;
 
-    /**
-     * {@inheritDoc}
-     */
-    @Override
+
     public TestObject addTestObject(TestObject testObject) {
         return testObjectRepository.save(testObject);
     }
