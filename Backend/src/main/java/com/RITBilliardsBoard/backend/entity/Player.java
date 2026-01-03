@@ -22,6 +22,8 @@ public class Player {
     @Id // This paramater should be treated as the primary key of a Player
     @GeneratedValue(strategy = GenerationType.AUTO) // Each time a new Player is created it should be assigned a new appropriate ID
     private Long PlayerId;
+
+
     private String Name;
     private String Major;
     private int APA_rank;
@@ -31,18 +33,20 @@ public class Player {
     //private matchHistory match_history;   // To be implemented later, think we should create a separate class for this
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY )
+    @JoinColumn(name = "statistics.id")
     private Statistics stats;             // To be implemented later, think we should create a separate class for this
 
     //private scheduledMatches schedule;    // To be implemented later, think we should create a separate class for this
 
+    public Player() {}
 
-    public Player(String Name, String Major, int APA_rank, int Fargo_rtg, int rank){
+    public Player(String Name, String Major, int APA_rank, int Fargo_rtg, int rank) {
         this.Name = Name;
         this.Major = Major;
         this.APA_rank = APA_rank;
         this.Fargo_rtg = Fargo_rtg;
         this.rank = rank;
-        this.stats = new Statistics(this);
+        this.stats = new Statistics(this); // auto-create + link
     }
 
 }
