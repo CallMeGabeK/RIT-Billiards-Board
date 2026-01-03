@@ -33,7 +33,7 @@ public class Player {
     //private matchHistory match_history;   // To be implemented later, think we should create a separate class for this
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY )
-    @JoinColumn(name = "statistics.id")
+    @JoinColumn(name = "STATISTICS.ID")
     private Statistics stats;             // To be implemented later, think we should create a separate class for this
 
     //private scheduledMatches schedule;    // To be implemented later, think we should create a separate class for this
